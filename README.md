@@ -22,7 +22,7 @@ joy = Joystick(button_pin=None)
 仓库中提供了两个 Python 脚本，分别依赖 `gpiozero` 和 `adafruit-circuitpython-ads1x15`。安装依赖后你可以以以下方式运行：
 
 ```bash
-pip install gpiozero adafruit-blinka adafruit-circuitpython-ads1x15
+pip install gpiozero adafruit-blinka adafruit-circuitpython-ads1x15 lgpio
 python examples/main.py
 ```
 
