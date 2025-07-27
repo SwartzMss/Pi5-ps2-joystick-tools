@@ -5,6 +5,7 @@ from adafruit_ads1x15.analog_in import AnalogIn
 from typing import Optional
 
 from gpiozero import Button
+import warnings
 import board
 import busio
 
@@ -17,7 +18,12 @@ class Joystick:
         self.ads = ADS.ADS1115(i2c)
         self.x_axis = AnalogIn(self.ads, x_channel)
         self.y_axis = AnalogIn(self.ads, y_channel)
-        self.switch = Button(button_pin) if button_pin is not None else None
+        self.switch = None
+        if button_pin is not None:
+            try:
+                self.switch = Button(button_pin)
+            except Exception as e:
+                warnings.warn(f"Failed to initialize button on GPIO {button_pin}: {e}")
 
     def read(self):
         """Return a tuple of (x_value, y_value, pressed)."""

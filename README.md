@@ -27,3 +27,7 @@ python examples/main.py
 ```
 
 `examples/main.py` 使用 `examples/joystick.py`中的 `Joystick` 类来读取摇杆数据，并周期输出 X/、Y 值及按键状态。按 `Ctrl+C` 可退出。
+
+如果在初始化按键时出现 `GPIO busy` 错误，说明该 GPIO 可能已被其它进程占用。
+此时可在创建 `Joystick` 时传入 `button_pin=None` 以禁用按键读取，或检查系统中
+占用该引脚的程序。
