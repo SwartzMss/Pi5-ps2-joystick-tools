@@ -14,7 +14,7 @@
 仓库中提供了两个 Python 脚本，依赖 `adafruit-circuitpython-ads1x15`。安装依赖后可以通过以下命令运行：
 
 ```bash
-pip install adafruit-blinka adafruit-circuitpython-ads1x15
+pip install adafruit-blinka adafruit-circuitpython-ads1x15 lgpio
 python examples/main.py
 ```
 
