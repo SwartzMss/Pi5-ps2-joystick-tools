@@ -9,8 +9,8 @@ joy = Joystick()
 print("Press Ctrl+C to exit")
 try:
     while True:
-        x, y, pressed = joy.read()
-        print(f"X: {x} | Y: {y} | Button: {pressed}")
+        x, y = joy.read()
+        print(f"X: {x} | Y: {y}")
         sleep(0.2)
 except KeyboardInterrupt:
     print("\nExiting...")
